@@ -1,3 +1,6 @@
+git rm "index.html"
+git commit -m "Delete index.html"
+git push
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -643,126 +646,6 @@
         transform: none;
     }
 }
-
-  /* ── CONTACT FORM STYLES ── */
-  .contact-section {
-    padding: 60px 40px;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  .contact-section .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 42px;
-    font-weight: 300;
-    color: #3d3328;
-    text-align: center;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
-  }
-
-  .contact-intro {
-    text-align: center;
-    color: #6b5d4f;
-    font-size: 18px;
-    line-height: 1.9;
-    margin-bottom: 50px;
-    font-style: italic;
-  }
-
-  .contact-form {
-    width: 100%;
-  }
-
-  .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    margin-bottom: 25px;
-  }
-
-  .form-group {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .form-group label {
-    font-family: 'Jost', sans-serif;
-    font-size: 12px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #6b5d4f;
-    margin-bottom: 10px;
-    font-weight: 400;
-  }
-
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 16px;
-    padding: 15px;
-    border: 1px solid #e0dcd6;
-    background: #fff;
-    color: #3d3328;
-    transition: border-color 0.3s ease;
-  }
-
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus {
-    outline: none;
-    border-color: #c9b99a;
-  }
-
-  .form-group textarea {
-    resize: vertical;
-    min-height: 150px;
-  }
-
-  .form-group select {
-    cursor: pointer;
-  }
-
-  .submit-button {
-    display: block;
-    width: 100%;
-    font-family: 'Jost', sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 18px 40px;
-    background: #c9b99a;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(201,185,154,0.3);
-    margin-top: 16px;
-  }
-
-  .submit-button:hover {
-    background: #b5a587;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(201,185,154,0.4);
-  }
-
-  @media (max-width: 768px) {
-    .form-row {
-      grid-template-columns: 1fr;
-      gap: 0;
-    }
-    
-    .contact-section {
-      padding: 40px 20px;
-    }
-    
-    .contact-section .section-title {
-      font-size: 32px;
-    }
-  }
-
 </style>
 </head>
 <body>
@@ -829,7 +712,7 @@
         <div class="pricing-header">
           <p class="section-label">BOUQUET PRICING</p>
           <h2>Choose Your Bouquet</h2>
-          <p>Pay per bouquet — perfect for markets &amp; open houses</p>
+          <p>Pay per bouquet — perfect for markets &amp; open houses - $75/hr</p>
         </div>
         <div class="bouquet-cards">
           <div class="bouquet-card">
@@ -864,12 +747,12 @@
           <div class="package-card featured">
             <p class="pkg-name">Soirée</p>
             <p class="pkg-price">$950</p>
-            <p class="pkg-detail">40 guests<br>3 hours of service</p>
+            <p class="pkg-detail">21-40 guests<br>3 hours of service</p>
           </div>
           <div class="package-card">
             <p class="pkg-name">Grand</p>
             <p class="pkg-price">$1,350</p>
-            <p class="pkg-detail">60 guests<br>4 hours of service</p>
+            <p class="pkg-detail">41-60 guests<br>4 hours of service</p>
           </div>
         </div>
         <p class="custom-note">Custom packages available for 60+ guests</p>
@@ -891,82 +774,12 @@
           <hr class="divider" style="width:100%; margin-bottom:28px;">
           <p class="closing-cta">Ready to bloom? Let's make it yours.</p>
           <p class="closing-contact">
-            <span>CARLY DEWESE</span>
-            <span>Email: <a href="/cdn-cgi/l/email-protection#80e3e1f2ecf9c0e4e5f7e5f3e5aee3efed" style="color: #4a5a4c;"><span class="__cf_email__" data-cfemail="05666477697c456160726076602b666a68">[email&#160;protected]</span></a></span>
+            <span>CARLY DEWESE</span><br>
+            <span>Email: <a href="mailto:carly@dewese.com" style="color: #4a5a4c;">carly@dewese.com</a></span>
             <span>Phone: <a href="tel:714-742-4004" style="color: #4a5a4c;">714.742.4003</a></span>
             <span>Website: <a href="https://www.wildbloomflower.co" style="color: #4a5a4c;">www.wildbloomflower.co</a></span>
           </p>
 
-        </div>
-      </div>
-    </div>
-
-
-    <!-- PAGE 5: CONTACT FORM -->
-    <div class="page" id="page-5">
-      <div class="page-content">
-        <div class="contact-section">
-          <h2 class="section-title">Let's Create Magic Together</h2>
-          <p class="contact-intro">Share your vision with us and let's bring your floral dreams to life.</p>
-          
-          <form action="https://formspree.io/f/xjgeydeb" method="POST" class="contact-form">
-           
-            <div class="form-row">
-              <div class="form-group">
-                <label for="name">Your Name *</label>
-                <input type="text" id="name" name="name" required>
-              </div>
-              
-              <div class="form-group">
-                <label for="email">Email Address *</label>
-                <input type="email" id="email" name="email" required>
-              </div>
-            </div>
-            
-            <div class="form-row">
-              <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone">
-              </div>
-              
-              <div class="form-group">
-                <label for="event-type">Event Type *</label>
-                <select id="event-type" name="event-type" required>
-                  <option value="">Select an event type</option>
-                  <option value="bridal-shower">Bridal Shower</option>
-                  <option value="baby-shower">Baby Shower</option>
-                  <option value="corporate-event">Corporate Event</option>
-                  <option value="birthday">Birthday Celebration</option>
-                  <option value="workshop">Private Workshop</option>
-                  <option value="other">Other Celebration</option>
-                </select>
-              </div>
-            </div>
-            
-            <div class="form-row">
-              <div class="form-group">
-                <label for="guest-count">Estimated Guest Count *</label>
-                <input type="number" id="guest-count" name="guest-count" min="1" required>
-              </div>
-              
-              <div class="form-group">
-                <label for="event-date">Preferred Event Date</label>
-                <input type="date" id="event-date" name="event-date">
-              </div>
-            </div>
-            
-            <div class="form-group">
-              <label for="location">Event Location</label>
-              <input type="text" id="location" name="location" placeholder="City or venue name">
-            </div>
-            
-            <div class="form-group">
-              <label for="vision">Tell Us About Your Vision</label>
-              <textarea id="vision" name="vision" rows="6" placeholder="Share your ideas, color preferences, style inspiration, or any special requests..."></textarea>
-            </div>
-            
-            <button type="submit" class="submit-button">Send Inquiry</button>
-          </form>
         </div>
       </div>
     </div>
@@ -976,16 +789,16 @@
   <!-- Navigation -->
   <div class="nav">
     <button class="nav-btn" id="prev-btn" onclick="changePage(-1)" disabled>&#8592; PREV</button>
+
     <button class="nav-btn" id="next-btn" onclick="changePage(1)">NEXT &#8594;</button>
   </div>
-  <p class="page-counter" id="page-counter">1 / 5</p>
+  <p class="page-counter" id="page-counter">1 / 4</p>
 
 </div><!-- .book-wrapper -->
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script>
   let current = 1;
-  const total = 5;
+  const total = 4;
 
   function changePage(dir) {
     goToPage(current + dir);
@@ -1013,11 +826,9 @@
   let touchStartX = 0;
   document.querySelector('.book').addEventListener('touchstart', e => touchStartX = e.touches[0].clientX);
   document.querySelector('.book').addEventListener('touchend', e => {
-    const touchEndX = e.changedTouches[0].clientX;
-    if (touchStartX - touchEndX > 50) changePage(1);
-    if (touchEndX - touchStartX > 50) changePage(-1);
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) changePage(diff > 0 ? 1 : -1);
   });
 </script>
-
 </body>
 </html>
