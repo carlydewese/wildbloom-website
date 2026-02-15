@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta Tags -->
+<title>Wild Bloom Flower Co. | Custom Floral Designs & Flower Bar Experiences</title>
+<meta name="description" content="Wild Bloom Flower Co. offers stunning custom floral arrangements and interactive flower bar experiences for weddings, events, and celebrations. Book your floral experience today.">
+<meta name="keywords" content="flower bar, custom florals, wedding flowers, event florals, bridal shower, floral design, flower arrangements">
+<meta name="author" content="Carly Dewese">
+
+<!-- Open Graph / Social Media Meta Tags -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.wildbloomflower.co">
+<meta property="og:title" content="Wild Bloom Flower Co. | Custom Floral Designs">
+<meta property="og:description" content="Stunning custom floral arrangements and interactive flower bar experiences for your special events.">
+<meta property="og:image" content="https://www.wildbloomflower.co/images/og-image.jpg">
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Wild Bloom Flower Co.">
+<meta name="twitter:description" content="Custom floral designs and flower bar experiences">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://www.wildbloomflower.co">
+
+<!-- Favicon (you'll need to add this file) -->
+<link rel="icon" type="image/png" href="/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #f0ece6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    padding: 20px;
+    padding-top: 90px;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9b99a' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 300; }
+
+  /* ── TOP NAVIGATION ── */
+  .top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fffcf8;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    z-index: 1000;
+    padding: 16px 24px;
+  }
+
+  .top-nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .nav-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #7a6a5a;
+    letter-spacing: 1px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .nav-link {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #8a7a6a;
+    background: transparent;
+    border: 1px solid #d4c4b4;
+    padding: 8px 16px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .nav-link:hover {
+    background: #f5f0ea;
+    border-color: #b8a898;
+    color: #5a4a3a;
+  }
+
+  .nav-link.active {
+    background: #d4b896;
+    border-color: #c4a886;
+    color: #fffcf8;
+  }
+
+  /* Responsive nav */
+  @media (max-width: 768px) {
+    .top-nav-inner {
+      flex-direction: column;
+      gap: 12px;
+    }
+    
+    .nav-links {
+      justify-content: center;
+      gap: 6px;
+    }
+    
+    .nav-link {
+      font-size: 10px;
+      padding: 6px 12px;
+    }
+    
+    body {
+      padding-top: 120px;
+    }
+  }
+
+  /* ── BOOK CONTAINER ── */
+  .book-wrapper {
+    perspective: 2500px;
+    width: min(780px, 95vw);
+    margin: 0 auto;
+  }
+
+  .book {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  /* ── PAGES ── */
+  .page {
+    display: none;
+    width: 100%;
+    background: #fffcf8;
+    box-shadow: 0 20px 80px rgba(0,0,0,0.15), 0 2px 8px rgba(0,0,0,0.08);
+    border-radius: 2px;
+    min-height: 600px;
+    position: relative;
+    overflow: hidden;
+    animation: pageEnter 0.5s ease forwards;
+  }
+
+  .page.active { display: block; }
+
+  @keyframes pageEnter {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Page corner decoration */
+  .page::after {
+    content: '';
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 0; height: 0;
+    border-style: solid;
+    border-width: 0 0 28px 28px;
+    border-color: transparent transparent #e8e0d5 transparent;
+    opacity: 0.6;
+  }
+
+  /* ── PAGE CONTENT LAYOUTS ── */
+  .page-inner {
+    padding: 52px 56px;
+  }
+
+  /* ── PAGE 1: COVER ── */
+  .cover {
+    background: #fffcf8;
+    text-align: center;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cover-top {
+    padding: 48px 56px 32px;
+    text-align: center;
+  }
+
+  .cover-logo {
+    max-width: 340px;
+    margin: 0 auto 20px;
+    display: block;
+  }
+
+  .cover-tagline-label {
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 11.5px;
+    letter-spacing: 5px;
+    color: #a09080;
+    margin-bottom: 10px;
+  }
+
+  .cover-tagline {
+    font-size: 15px;
+    font-style: italic;
+    color: #7a6a5a;
+    line-height: 1.6;
+    max-width: 440px;
+    margin: 0 auto 28px;
+  }
+
+  .cover-hero {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center 40%;
+    filter: saturate(0.75) contrast(0.85) brightness(0.92);
+  }
+
+  .cover-moment {
+    padding: 32px 56px 44px;
+    text-align: center;
+  }
+
+  .cover-moment p {
+    font-size: 16px;
+    font-style: italic;
+    color: #7a6a5a;
+    line-height: 1.8;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  /* ── PAGE 2: THE EXPERIENCE ── */
+  .exp-header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .exp-header h2 {
+    font-size: 32px;
+    color: #4a5a4c;
+    margin-bottom: 12px;
+  }
+
+  .exp-header p {
+    font-size: 15px;
+    font-style: italic;
+    color: #8a7a6a;
+    line-height: 1.6;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #b8a898;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid #ddd5c8;
+    margin: 32px 0;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+
+  .exp-photo {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 2px;
+    filter: saturate(0.75) contrast(0.85) brightness(0.92);
+  }
+
+  .included-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px;
+    font-size: 14.5px;
+    color: #6a5a4a;
+    line-height: 1.9;
+  }
+
+  .floral-bullet {
+    color: #c9b99a;
+    font-size: 20px;
+    margin-right: 10px;
+  }
+
+  .addons-section {
+    margin-top: 28px;
+  }
+
+  .addons-title {
+    font-size: 18px;
+    color: #4a5a4c;
+    margin-bottom: 8px;
+    font-weight: 400;
+  }
+
+  .addons-subtitle {
+    font-size: 13px;
+    font-style: italic;
+    color: #9a8a7a;
+    margin-bottom: 16px;
+  }
+
+  .addon-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13.5px;
+    color: #6a5a4a;
+    padding: 6px 0;
+    border-bottom: 1px dotted #e5ddd2;
+  }
+
+  .addon-price {
+    color: #8a7a6a;
+    font-weight: 300;
+  }
+
+  .cta-button {
+    display: inline-block;
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fffcf8;
+    background: #8B9B8D;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    margin-top: 24px;
+  }
+
+  .cta-button:hover {
+    background: #7B8B7D;
+  }
+
+  /* ── PAGE 3: BOUQUET PRICING ── */
+  .pricing-header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .pricing-header h2 {
+    font-size: 32px;
+    color: #4a5a4c;
+    margin-bottom: 12px;
+  }
+
+  .pricing-header p {
+    font-size: 15px;
+    font-style: italic;
+    color: #8a7a6a;
+    line-height: 1.6;
+  }
+
+  .bouquet-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+
+  .bouquet-card {
+    border: 1px solid #ddd5c8;
+    padding: 28px 14px;
+    text-align: center;
+    position: relative;
+  }
+
+  .bouquet-card.featured {
+    border-color: #8B9B8D;
+    background: #f7faf7;
+  }
+
+  .popular-tag {
+    position: absolute;
+    top: -11px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #8B9B8D;
+    color: white;
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 9px;
+    letter-spacing: 2px;
+    padding: 4px 12px;
+    white-space: nowrap;
+  }
+
+  .card-name {
+    font-size: 20px;
+    color: #4a5a4c;
+    margin-bottom: 8px;
+  }
+
+  .card-price {
+    font-size: 42px;
+    color: #4a5a4c;
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .card-stems {
+    font-size: 13px;
+    font-style: italic;
+    color: #9a8a7a;
+  }
+
+  /* ── PAGE 4: EVENT PACKAGES ── */
+  .event-intro {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .event-intro p {
+    font-size: 14px;
+    font-style: italic;
+    color: #8a7a6a;
+    line-height: 1.6;
+    margin-top: 8px;
+    max-width: 460px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .package-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 28px 0 20px;
+  }
+
+  .package-card {
+    border: 1px solid #ddd5c8;
+    padding: 22px 14px;
+    text-align: center;
+  }
+
+  .package-card.featured {
+    border-color: #8B9B8D;
+    background: #f7faf7;
+  }
+
+  .pkg-name {
+    font-size: 20px;
+    color: #4a5a4c;
+    margin-bottom: 6px;
+  }
+
+  .pkg-price {
+    font-size: 38px;
+    color: #4a5a4c;
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .pkg-detail {
+    font-size: 12.5px;
+    font-style: italic;
+    color: #9a8a7a;
+    line-height: 1.7;
+  }
+
+  .custom-note {
+    text-align: center;
+    font-size: 13.5px;
+    font-style: italic;
+    color: #8a7a6a;
+    padding: 16px 0;
+    border-top: 1px solid #ddd5c8;
+  }
+
+  /* ── PAGE 5: CLOSING ── */
+  .closing {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .closing-photo-wrap {
+    position: relative;
+  }
+
+  .closing-photo {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center 60%;
+    display: block;
+    filter: saturate(0.75) contrast(0.85) brightness(0.92);
+  }
+
+  .closing-content {
+    padding: 44px 56px;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .perfect-for {
+    font-size: 13px;
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    color: #8B9B8D;
+    letter-spacing: 1.5px;
+    line-height: 2.2;
+    margin-bottom: 32px;
+  }
+
+  .closing-cta {
+    font-size: 22px;
+    font-style: italic;
+    color: #4a5a4c;
+    margin-bottom: 20px;
+  }
+
+  .closing-contact {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: #5a4a3a;
+  }
+
+  .closing-contact a {
+    color: #5B6B5D;
+    text-decoration: none;
+  }
+
+  /* ── PAGE 6: PHOTOS GALLERY ── */
+  .gallery-section {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .gallery-intro {
+    text-align: center;
+    font-size: 16px;
+    color: #6a5a4a;
+    margin-bottom: 48px;
+    line-height: 1.7;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .gallery-item {
+    position: relative;
+    aspect-ratio: 4/3;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #e8dfd5;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .gallery-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .gallery-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #f8f4ef 0%, #e8dfd5 100%);
+    color: #b8a898;
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .gallery-categories {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+  }
+
+  .category-filter {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #8a7a6a;
+    background: transparent;
+    border: 1px solid #d4c4b4;
+    padding: 8px 20px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .category-filter:hover,
+  .category-filter.active {
+    background: #8B9B8D;
+    border-color: #7B8B7D;
+    color: #fffcf8;
+  }
+
+  /* ── CONTACT FORM STYLES ── */
+  .contact-section {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .section-title {
+    font-size: 32px;
+    color: #4a5a4c;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .contact-intro {
+    font-size: 15px;
+    font-style: italic;
+    color: #8a7a6a;
+    text-align: center;
+    margin-bottom: 40px;
+    line-height: 1.6;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-group label {
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: #6a5a4a;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    padding: 12px;
+    border: 1px solid #d4c4b4;
+    border-radius: 2px;
+    background: #fffcf8;
+    color: #4a5a4c;
+    transition: border-color 0.3s ease;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #8B9B8D;
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .submit-button {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fffcf8;
+    background: #8B9B8D;
+    border: none;
+    padding: 16px 40px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: center;
+    margin-top: 12px;
+  }
+
+  .submit-button:hover {
+    background: #7B8B7D;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 155, 141, 0.3);
+  }
+
+  .page-content {
+    padding: 52px 20px;
+  }
+
+/* ── MOBILE RESPONSIVE ── */
+@media (max-width: 600px) {
+  .page-inner {
+    padding: 32px 24px;
+  }
+
+  .cover-top {
+    padding: 32px 24px 24px;
+  }
+
+  .cover-logo {
+    max-width: 220px;
+  }
+
+  .cover-hero {
+    height: 220px;
+  }
+
+  .cover-moment {
+    padding: 24px 24px 32px;
+  }
+
+  .cover-moment p {
+    font-size: 15px;
+  }
+
+  .cover-tagline-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
+
+  .cover-tagline {
+    font-size: 13.5px;
+  }
+
+  .exp-header h2,
+  .pricing-header h2 {
+    font-size: 26px;
+  }
+
+  .two-col {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .exp-photo {
+    height: 240px;
+  }
+
+  .bouquet-cards,
+  .package-cards {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .closing-photo {
+    height: 240px;
+  }
+
+  .closing-cta {
+    font-size: 18px;
+  }
+
+  .page {
+    min-height: auto;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .contact-section {
+    padding: 10px;
+  }
+
+  .page-content {
+    padding: 32px 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .page-inner {
+    padding: 24px 16px;
+  }
+
+  .cover-top {
+    padding: 24px 16px 20px;
+  }
+
+  .cover-moment {
+    padding: 20px 16px 28px;
+  }
+
+  .closing-content {
+    padding: 28px 16px;
+  }
+
+  .cover-logo {
+    max-width: 180px;
+  }
+
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
+
+  .exp-header h2,
+  .pricing-header h2 {
+    font-size: 24px;
+  }
+
+  .exp-header p,
+  .pricing-header p {
+    font-size: 14px;
+  }
+
+  .card-name,
+  .pkg-name {
+    font-size: 18px;
+  }
+
+  .card-price {
+    font-size: 36px;
+  }
+
+  .pkg-price {
+    font-size: 32px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Top Navigation -->
+<nav class="top-nav">
+  <div class="top-nav-inner">
+    <div class="nav-brand">WILD BLOOM</div>
+    <div class="nav-links">
+      <button class="nav-link active" onclick="goToPage(1)">Home</button>
+      <button class="nav-link" onclick="goToPage(2)">Details</button>
+      <button class="nav-link" onclick="goToPage(3)">Services</button>
+      <button class="nav-link" onclick="goToPage(4)">About</button>
+      <button class="nav-link" onclick="goToPage(5)">Contact</button>
+      <button class="nav-link" onclick="goToPage(6)">Gallery</button>
+    </div>
+  </div>
+</nav>
+
+<div class="book-wrapper">
+  <div class="book">
+
+    <!-- ── PAGE 1: COVER ── -->
+    <div class="page active" id="page-1">
+      <div class="cover">
+        <div class="cover-top">
+          <img class="cover-logo" src="images/logo.png" alt="Wild Bloom Flower Co.">
+          <p class="cover-tagline-label">WHERE CREATIVITY BLOOMS</p>
+          <p class="cover-tagline">Interactive flower bar experiences &amp; custom floral designs for life's most meaningful moments</p>
+        </div>
+        <img class="cover-hero" src="images/HOME.png" alt="Wild Bloom flower arrangements">
+        <div class="cover-moment">
+          <p class="section-label">THE MOMENT</p>
+          <p>Perfect for intimate celebrations and thoughtfully curated events, Wild Bloom shows up when moments deserve something personal, meaningful &amp; unforgettable.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── PAGE 2: THE EXPERIENCE ── -->
+    <div class="page" id="page-2">
+      <div class="page-inner">
+        <div class="exp-header">
+          <p class="section-label">THE EXPERIENCE</p>
+          <h2>Every Detail, Handled</h2>
+          <p>We invite guests to design one-of-a-kind bouquets using thoughtfully curated blooms, embracing a loose, free-flowing approach to floral design where creativity leads the way.</p>
+        </div>
+        <hr class="divider">
+        <div class="two-col">
+          <div>
+            <p class="addons-title">What To Expect</p>
+            <ul class="included-list">
+              <li><span class="floral-bullet">—</span> Varieties of premium fresh flowers and greenery</li>
+              <li><span class="floral-bullet">—</span> Expert floral guidance to help bring your unique vision to life</li>
+              <li><span class="floral-bullet">—</span> Signature ribbon &amp; kraft paper wrapping</li>
+              <li><span class="floral-bullet">—</span> All professional floral tools</li>
+              <li><span class="floral-bullet">—</span> Complete setup and teardown so you can enjoy every moment</li>
+            </ul>
+            <p class="section-label" style="margin-bottom:20px; text-align: left;">PERFECT FOR</p>
+            <p class="perfect-for" style="text-align: left; margin-bottom: 0;">
+              Bridal Showers &nbsp;·&nbsp; Baby Showers &nbsp;·&nbsp; Birthday Celebrations &nbsp;·&nbsp; Graduations<br>
+              Corporate Events &nbsp;·&nbsp; Open Houses &nbsp;·&nbsp; Girls' Nights &nbsp;·&nbsp; Weddings &nbsp;·&nbsp; Markets
+            </p>
+          </div>
+          <div>
+            <img class="exp-photo" src="images/DETAILS.jpg" alt="Flower bar setup">
+          </div>
+        </div>
+        <div style="text-align: center;">
+          <button class="cta-button" onclick="goToPage(5)">Get Started</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── PAGE 3: Pricing ── -->
+    <div class="page" id="page-3">
+      <div class="page-inner">
+        <div class="pricing-header">
+          <p class="section-label">CELEBRATING WILD BEAUTY</p>
+          <h2>Choose Your Bouquet</h2>
+          <p>Pay per bouquet — perfect for markets &amp; open houses - $75/hr</p>
+        </div>
+        <div class="bouquet-cards">
+          <div class="bouquet-card">
+            <p class="card-name">Classic</p>
+            <p class="card-price">$25</p>
+            <p class="card-stems">8 stems</p>
+          </div>
+          <div class="bouquet-card featured">
+            <span class="popular-tag">MOST POPULAR</span>
+            <p class="card-name">Signature</p>
+            <p class="card-price">$30</p>
+            <p class="card-stems">10 stems</p>
+          </div>
+          <div class="bouquet-card">
+            <p class="card-name">Luxe</p>
+            <p class="card-price">$35</p>
+            <p class="card-stems">12 stems</p>
+          </div>
+        </div>
+        <hr class="divider">
+        <div class="pricing-header" style="margin-bottom:28px; margin-top:28px;">
+          <p class="section-label">PRIVATE EVENTS</p>
+          <h2>Event Packages</h2>
+          <p>Everything included — all you do is create &amp; celebrate</p>
+        </div>
+        <div class="package-cards">
+          <div class="package-card">
+            <p class="pkg-name">Intimate</p>
+            <p class="pkg-price">$550</p>
+            <p class="pkg-detail">Minimum 20 guests<br>2 hours of service</p>
+          </div>
+          <div class="package-card featured">
+            <p class="pkg-name">Soirée</p>
+            <p class="pkg-price">$950</p>
+            <p class="pkg-detail">40 guests<br>3 hours of service</p>
+          </div>
+          <div class="package-card">
+            <p class="pkg-name">Grand</p>
+            <p class="pkg-price">$1,350</p>
+            <p class="pkg-detail">60 guests<br>4 hours of service</p>
+          </div>
+        </div>
+        <p class="custom-note">Custom packages available for 60+ guests</p>
+        <hr class="divider">
+        <div class="addons-section" style="max-width: 500px; margin: 0 auto;">
+          <p class="addons-title">Add-Ons Available</p>
+          <p class="addons-subtitle">Enhance your experience with these optional upgrades</p>
+          <div class="addon-row"><span>Simple glass vase</span><span class="addon-price">+$5 each</span></div>
+          <div class="addon-row"><span>Premium decorative vase</span><span class="addon-price">+$10 each</span></div>
+          <div class="addon-row"><span>Premium ribbon upgrade</span><span class="addon-price">+$50 flat</span></div>
+          <div class="addon-row"><span>Custom tissue paper</span><span class="addon-price">+$50 flat</span></div>
+          <div class="addon-row"><span>Custom care card &amp; flower food</span><span class="addon-price">+$75 flat</span></div>
+        </div>
+      </div>
+    </div>
+    
+   <!-- ── PAGE 4: CLOSING ── -->
+    <div class="page" id="page-4">
+      <div class="closing">
+        <div class="closing-photo-wrap">
+          <img class="closing-photo" src="images/ABOUT.jpg" alt="Wild Bloom experience">
+        </div>
+        <div class="closing-content">
+          <hr class="divider" style="width:100%; margin-bottom:28px;">
+          <p class="closing-cta">Ready to bloom? Let's make it yours.</p>
+          <button class="cta-button" onclick="goToPage(5)">Get In Touch</button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- PAGE 5: CONTACT FORM -->
+    <div class="page" id="page-5">
+      <div class="page-content">
+        <div class="contact-section">
+          <h2 class="section-title">Let's Create Together</h2>
+          <p class="contact-intro">Share your vision with us and let's bring your floral dreams to life.</p>
+          
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Your Name *</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone">
+              </div>
+              
+              <div class="form-group">
+                <label for="event-type">Event Type *</label>
+                <select id="event-type" name="event-type" required>
+                  <option value="">Select an event type</option>
+                  <option value="bridal-shower">Bridal Shower</option>
+                  <option value="baby-shower">Baby Shower</option>
+                  <option value="corporate-event">Corporate Event</option>
+                  <option value="birthday">Birthday Celebration</option>
+                  <option value="workshop">Private Workshop</option>
+                  <option value="other">Other Celebration</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="guest-count">Estimated Guest Count *</label>
+                <input type="number" id="guest-count" name="guest-count" min="1" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="event-date">Preferred Event Date</label>
+                <input type="date" id="event-date" name="event-date">
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="location">Event Location</label>
+              <input type="text" id="location" name="location" placeholder="City or venue name">
+            </div>
+            
+            <div class="form-group">
+              <label for="vision">Tell Us About Your Vision</label>
+              <textarea id="vision" name="vision" rows="6" placeholder="Share your ideas, color preferences, style inspiration, or any special requests..."></textarea>
+            </div>
+            
+            <button type="submit" class="submit-button">Send Inquiry</button>
+          </form>
+          
+          <div style="text-align: center; margin-top: 48px; padding-top: 32px; border-top: 1px solid #ddd5c8;">
+            <p class="closing-contact">
+              <span>CARLY DEWESE</span>
+              <span>Email: <a href="mailto:carly@dewese.com" style="color: #4a5a4c;">carly@dewese.com</a></span>
+              <span>Phone: <a href="tel:714-742-4003" style="color: #4a5a4c;">714.742.4003</a></span>
+              <span>Website: <a href="https://www.wildbloomflower.co" style="color: #4a5a4c;">www.wildbloomflower.co</a></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE 6: PHOTOS GALLERY -->
+    <div class="page" id="page-6">
+      <div class="page-inner">
+        <div class="gallery-section">
+          <p class="section-label">Photo Gallery</p>
+          <h2 class="exp-header" style="text-align: center; margin-bottom: 16px;">
+            <span style="font-size: 32px; color: #4a5a4c;">Where Creativity Blooms</span>
+          </h2>
+          <p class="gallery-intro">
+            Explore our portfolio of custom floral designs and flower bar experiences. 
+            Each arrangement tells a unique story of celebration and beauty.
+          </p>
+
+          <!-- Optional category filters -->
+          <div class="gallery-categories">
+            <button class="category-filter active">All</button>
+            <button class="category-filter">Flower Bar</button>
+            <button class="category-filter">Events</button>
+            <button class="category-filter">Arrangements</button>
+            <button class="category-filter">Backdrops</button>
+          </div>
+
+          <!-- Gallery Grid - Add your images here -->
+          <div class="gallery-grid">
+            <!-- Placeholder items - replace with your actual images -->
+            <div class="gallery-item">
+              <div class="gallery-placeholder">Add Photo</div>
+            </div>
+              <!-- <img src="images/photo1.jpg" alt="Flower bar setup with seasonal blooms"> -->
+            </div>
+            <div class="gallery-item">
+              <div class="gallery-placeholder">Add Photo</div>
+              <!-- <img src="images/photo2.jpg" alt="Wedding centerpiece arrangement"> -->
+            </div>
+            <div class="gallery-item">
+              <div class="gallery-placeholder">Add Photo</div>
+              <!-- <img src="images/photo3.jpg" alt="Bridal shower flower bar"> -->
+            </div>
+            <div class="gallery-item">
+              <div class="gallery-placeholder">Add Photo</div>
+              <!-- <img src="images/photo4.jpg" alt="Custom bouquet arrangement"> -->
+            </div>
+            <div class="gallery-item">
+              <div class="gallery-placeholder">Add Photo</div>
+              <!-- <img src="images/photo5.jpg" alt="Corporate event floral installation"> -->
+            </div>
+            <div class="gallery-item">
+              <div class="gallery-placeholder">Add Photo</div>
+              <!-- <img src="images/photo6.jpg" alt="Birthday celebration flowers"> -->
+            </div>
+          </div>
+
+          <div style="text-align: center; margin-top: 32px;">
+            <button class="cta-button" style="display: inline-block; font-family: 'Jost', sans-serif; font-weight: 300; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #fffcf8; background: #8B9B8D; border: none; padding: 14px 32px; border-radius: 2px; cursor: pointer; transition: all 0.3s ease; text-decoration: none;" onclick="goToPage(5)">Book Your Experience</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- .book -->
+
+</div><!-- .book-wrapper -->
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script>
+  let current = 1;
+  const total = 6;
+
+  function goToPage(n) {
+    if (n < 1 || n > total) return;
+    document.getElementById('page-' + current).classList.remove('active');
+    
+    current = n;
+    document.getElementById('page-' + current).classList.add('active');
+    
+    // Update top nav active state
+    updateTopNav();
+  }
+
+  function updateTopNav() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach((link, index) => {
+      if (index + 1 === current) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  }
+
+  // Optional: Category filter functionality for gallery
+  const categoryFilters = document.querySelectorAll('.category-filter');
+  categoryFilters.forEach(filter => {
+    filter.addEventListener('click', function() {
+      categoryFilters.forEach(f => f.classList.remove('active'));
+      this.classList.add('active');
+      
+      // Add your filtering logic here when you have actual photos
+      // const category = this.textContent.toLowerCase();
+      // filterGalleryItems(category);
+    });
+  });
+</script>
+
+<!-- Structured Data for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Wild Bloom Flower Co.",
+  "description": "Custom floral designs and interactive flower bar experiences for weddings, events, and celebrations",
+  "url": "https://www.wildbloomflower.co",
+  "telephone": "+1-714-742-4003",
+  "email": "hello@wildbloomflower.co",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "US"
+  },
+  "priceRange": "$$",
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates"
+    }
+  },
+  "sameAs": []
+}
+</script>
+
+</body>
+</html>
