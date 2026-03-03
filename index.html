@@ -855,6 +855,55 @@ src="https://www.facebook.com/tr?id=2294936541018531&ev=PageView&noscript=1"
     font-size: 32px;
   }
 }
+ /* ── SERVICES DROPDOWN ── */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fffcf8;
+  border: 1px solid #d4c4b4;
+  border-radius: 2px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  min-width: 160px;
+  z-index: 1001;
+  overflow: hidden;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu {
+  display: block;
+}
+
+.nav-dropdown-item {
+  display: block;
+  width: 100%;
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #8a7a6a;
+  background: transparent;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.nav-dropdown-item:hover {
+  background: #f5f0ea;
+  color: #5a4a3a;
+}
+
+.nav-dropdown-item + .nav-dropdown-item {
+  border-top: 1px solid #e8dfd5;
+}
 </style>
 </head>
 <body>
@@ -866,7 +915,13 @@ src="https://www.facebook.com/tr?id=2294936541018531&ev=PageView&noscript=1"
     <div class="nav-links">
       <button class="nav-link active" onclick="goToPage(1)">Home</button>
       <button class="nav-link" onclick="goToPage(2)">Details</button>
-      <button class="nav-link" onclick="goToPage(3)">Services</button>
+      <div class="nav-dropdown">
+  <button class="nav-link" onclick="goToPage(3)">Services</button>
+  <div class="nav-dropdown-menu">
+    <button class="nav-dropdown-item" onclick="goToPage(3); document.getElementById('bouquet-bar').scrollIntoView({behavior:'smooth'})">Bouquet Bar</button>
+    <button class="nav-dropdown-item" onclick="goToPage(6)">Arrangements</button>
+  </div>
+</div>
       <button class="nav-link" onclick="goToPage(4)">Contact</button>
       <button class="nav-link" onclick="goToPage(5)">Gallery</button>
     </div>
@@ -931,7 +986,7 @@ src="https://www.facebook.com/tr?id=2294936541018531&ev=PageView&noscript=1"
       <div class="page-inner">
         <div class="pricing-header">
           <p class="section-label">CELEBRATING WILD BEAUTY</p>
-          <h2>Choose Your Bouquet</h2>
+          <h2 id="bouquet-bar">Choose Your Bouquet</h2>
           <p>Pay per bouquet </p>
         </div>
         <div class="bouquet-cards">
@@ -1134,7 +1189,47 @@ src="https://www.facebook.com/tr?id=2294936541018531&ev=PageView&noscript=1"
         </div>
       </div>
     </div>
+<!-- ── PAGE 6: ARRANGEMENTS ── -->
+<div class="page" id="page-6">
+  <div class="page-inner">
+    <div class="pricing-header">
+      <p class="section-label">FRESH FLORALS, DELIVERED</p>
+      <h2>Custom Arrangements</h2>
+      <p>Bring the beauty of Wild Bloom into your home or workplace with a recurring floral delivery, designed fresh and delivered just for you.</p>
+    </div>
 
+    <hr class="divider">
+
+    <div class="bouquet-cards">
+      <div class="bouquet-card">
+        <p class="card-name">Weekly</p>
+        <p class="card-stems" style="font-size:15px; margin-top:8px;">Fresh arrangement delivered every week</p>
+      </div>
+      <div class="bouquet-card featured">
+        <p class="card-name">Bi-Weekly</p>
+        <p class="card-stems" style="font-size:15px; margin-top:8px;">A new arrangement every two weeks</p>
+      </div>
+      <div class="bouquet-card">
+        <p class="card-name">Monthly</p>
+        <p class="card-stems" style="font-size:15px; margin-top:8px;">One beautiful arrangement per month</p>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div style="text-align:center; max-width: 500px; margin: 0 auto 36px;">
+      <p class="section-label">FOR HOMES & BUSINESSES</p>
+      <p style="font-size:15px; color:#6a5a4a; line-height:1.8;">
+        Each arrangement is thoughtfully designed using seasonal blooms and greenery — no two are ever the same. Available for residential delivery and corporate accounts throughout Orange County.
+      </p>
+    </div>
+
+    <div style="text-align:center;">
+      <p class="closing-cta" style="font-size:20px; margin-bottom:24px;">Ready to add a little bloom to your space?</p>
+      <button class="cta-button" onclick="goToPage(4)">Get In Touch</button>
+    </div>
+  </div>
+</div>
   </div><!-- .book -->
 
 </div><!-- .book-wrapper -->
@@ -1142,7 +1237,7 @@ src="https://www.facebook.com/tr?id=2294936541018531&ev=PageView&noscript=1"
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script>
   let current = 1;
-  const total = 5;
+  const total = 6;
 
   function goToPage(n) {
     if (n < 1 || n > total) return;
