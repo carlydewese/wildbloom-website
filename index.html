@@ -1275,16 +1275,24 @@ src="https://www.facebook.com/tr?id=2294936541018531&ev=PageView&noscript=1"
     });
   }
 
-  // Optional: Category filter functionality for gallery
+  // Category filter functionality for gallery
   const categoryFilters = document.querySelectorAll('.category-filter');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  
   categoryFilters.forEach(filter => {
     filter.addEventListener('click', function() {
       categoryFilters.forEach(f => f.classList.remove('active'));
       this.classList.add('active');
       
-      // Add your filtering logic here when you have actual photos
-      // const category = this.textContent.toLowerCase();
-      // filterGalleryItems(category);
+      const category = this.textContent.toLowerCase().replace(/\s+/g, '-');
+      
+      galleryItems.forEach(item => {
+        if (category === 'all' || item.dataset.category === category) {
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+        }
+      });
     });
   });
 </script>
